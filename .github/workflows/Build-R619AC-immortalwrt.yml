@@ -159,6 +159,7 @@ jobs:
 
         # LuCI插件选择:
         cat >> .config <<EOF
+        CONFIG_PACKAGE_default-settings-chn=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-ddns=y
         CONFIG_PACKAGE_luci-app-ssr-plus=y
