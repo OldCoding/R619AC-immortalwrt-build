@@ -160,18 +160,16 @@ jobs:
 
         # LuCI插件选择:
         cat >> .config <<EOF
-        CONFIG_PACKAGE_default-settings-chn=y
-        # CONFIG_PACKAGE_luci-app-autoreboot is net set
-        # CONFIG_PACKAGE_luci-app-ddns is net set
-        # CONFIG_PACKAGE_luci-app-ssr-plus is net set
-        # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray is net set
-        # CONFIG_PACKAGE_luci-app-smartdns is net set
-        # CONFIG_PACKAGE_luci-app-samba4 is net set
-        # CONFIG_PACKAGE_luci-app-ttyd is net set
-        # CONFIG_PACKAGE_luci-app-webadmin is net set
-        # CONFIG_PACKAGE_luci-app-ramfree is net set
-        # CONFIG_PACKAGE_luci-app-upnp is net set
-        # CONFIG_PACKAGE_luci-app-zerotier is net set
+        CONFIG_PACKAGE_luci-app-ddns=y
+        CONFIG_PACKAGE_luci-app-firewall=y
+        CONFIG_PACKAGE_luci-app-filetransfer=y
+        CONFIG_PACKAGE_luci-app-ramfree=y
+        CONFIG_PACKAGE_luci-app-ssr-plus=y
+        CONFIG_PACKAGE_luci-app-smartdns=y
+        CONFIG_PACKAGE_luci-app-sqm=y
+        CONFIG_PACKAGE_luci-app-ttyd=y
+        CONFIG_PACKAGE_luci-app-upnp=y
+        CONFIG_PACKAGE_luci-app-zerotier=y
         EOF
 
         # LuCI主题:
@@ -180,11 +178,10 @@ jobs:
         EOF
 
         # 常用软件包:
-        #cat >> .config <<EOF
-        # CONFIG_PACKAGE_odhcpd is not set
-        # CONFIG_luci-app-samba is net set
-        # CONFIG_PACKAGE_luci-app-unblockmusic is net set
-        #EOF
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_autocore=y
+        CONFIG_PACKAGE_default-settings-chn=y
+        EOF
 
         # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
         # cat >> .config <<EOF
